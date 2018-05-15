@@ -12,14 +12,23 @@ namespace projeto_final_InoDa
 {
     public partial class FormClientes : Form
     {
-        public FormClientes()
+        FormInicial formInicial;
+        public FormClientes(FormInicial formInicial)
         {
             InitializeComponent();
+            this.formInicial = formInicial;
+            this.cbPesquisaClientes.SelectedIndex = 0;
         }
 
         private void btGerirClientes_Click(object sender, EventArgs e)
         {
-           
+            this.formInicial.Show();
+            this.Close();
+        }
+
+        private void FormClientes_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.formInicial.Show();
         }
     }
 }

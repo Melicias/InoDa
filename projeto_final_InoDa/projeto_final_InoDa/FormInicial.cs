@@ -19,7 +19,7 @@ namespace projeto_final_InoDa
 
         private void btGerirClientes_Click(object sender, EventArgs e)
         {
-            FormClientes formClientes = new FormClientes(); // Instantiate a FormClientes object.
+            FormClientes formClientes = new FormClientes(this); // Instantiate a FormClientes object.
             formClientes.Show(); // Show FormClientes
             this.Hide();// Hides the FormInicial instance.
         }
