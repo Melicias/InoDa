@@ -10,3 +10,8 @@ C:\Users\melic\Desktop\trabalhos\desenvolvimento de aplicacoes\projeto final\pro
 C:\Users\melic\Desktop\trabalhos\desenvolvimento de aplicacoes\projeto final\projeto_final_InoDa\projeto_final_InoDa\obj\Debug\projeto_final_InoDa.FormInicial.resources
 C:\Users\melic\Desktop\trabalhos\desenvolvimento de aplicacoes\projeto final\projeto_final_InoDa\projeto_final_InoDa\obj\Debug\projeto_final_InoDa.csprojAssemblyReference.cache
 C:\Users\melic\Desktop\trabalhos\desenvolvimento de aplicacoes\projeto final\projeto_final_InoDa\projeto_final_InoDa\obj\Debug\projeto_final_InoDa.FormCasa.resources
+C:\Users\melic\Desktop\trabalhos\desenvolvimento de aplicacoes\projeto final\projeto_final_InoDa\projeto_final_InoDa\bin\Debug\EntityFramework.dll
+C:\Users\melic\Desktop\trabalhos\desenvolvimento de aplicacoes\projeto final\projeto_final_InoDa\projeto_final_InoDa\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\melic\Desktop\trabalhos\desenvolvimento de aplicacoes\projeto final\projeto_final_InoDa\projeto_final_InoDa\bin\Debug\EntityFramework.xml
+C:\Users\melic\Desktop\trabalhos\desenvolvimento de aplicacoes\projeto final\projeto_final_InoDa\projeto_final_InoDa\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\melic\Desktop\trabalhos\desenvolvimento de aplicacoes\projeto final\projeto_final_InoDa\projeto_final_InoDa\obj\Debug\projeto_final_InoDa.csproj.CopyComplete
