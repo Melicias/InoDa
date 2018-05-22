@@ -16,8 +16,8 @@ namespace projeto_final_InoDa
     {
         public int IdServico { get; set; }
         public string Descricao { get; set; }
-        public string Valor { get; set; }
-        public string Unidades { get; set; }
+        public double Valor { get; set; }
+        public double Unidades { get; set; }
     
         public virtual Limpeza Limpeza { get; set; }
     }

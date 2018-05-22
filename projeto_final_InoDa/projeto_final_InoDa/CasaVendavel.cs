@@ -14,8 +14,8 @@ namespace projeto_final_InoDa
     
     public partial class CasaVendavel : Casa
     {
-        public string ValorBaseVenda { get; set; }
-        public string ValorComissao { get; set; }
+        public double ValorBaseVenda { get; set; }
+        public double ValorComissao { get; set; }
     
         public virtual Venda Venda { get; set; }
     }

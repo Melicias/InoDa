@@ -33,18 +33,18 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbPesquisaClientes = new System.Windows.Forms.ComboBox();
             this.btFiltrar = new System.Windows.Forms.Button();
-            this.dataGridViewClientes = new System.Windows.Forms.DataGridView();
-            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnContacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGVClientes = new System.Windows.Forms.DataGridView();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gbDetalhes = new System.Windows.Forms.GroupBox();
-            this.lbAquisições = new System.Windows.Forms.Label();
-            this.lbArrendamentos = new System.Windows.Forms.Label();
-            this.lbCasas = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.lbVendas = new System.Windows.Forms.ListBox();
+            this.lbArrendamentos = new System.Windows.Forms.ListBox();
+            this.lbCasas = new System.Windows.Forms.ListBox();
+            this.lbAquisicoesasd = new System.Windows.Forms.Label();
+            this.lbArrendamentosasd = new System.Windows.Forms.Label();
+            this.lbasCasas = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.tbContacto = new System.Windows.Forms.TextBox();
@@ -58,7 +58,7 @@
             this.btnApagar = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVClientes)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.gbDetalhes.SuspendLayout();
             this.SuspendLayout();
@@ -71,7 +71,6 @@
             this.btGerirClientes.TabIndex = 1;
             this.btGerirClientes.Text = "Gerir clientes";
             this.btGerirClientes.UseVisualStyleBackColor = true;
-            this.btGerirClientes.Click += new System.EventHandler(this.btGerirClientes_Click);
             // 
             // tbPesquisarClientes
             // 
@@ -113,37 +112,48 @@
             this.btFiltrar.TabIndex = 3;
             this.btFiltrar.Text = "Filtrar";
             this.btFiltrar.UseVisualStyleBackColor = true;
+            this.btFiltrar.Click += new System.EventHandler(this.btFiltrar_Click);
             // 
-            // dataGridViewClientes
+            // dataGVClientes
             // 
-            this.dataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnNome,
-            this.ColumnNIF,
-            this.ColumnContacto});
-            this.dataGridViewClientes.Location = new System.Drawing.Point(9, 22);
-            this.dataGridViewClientes.Name = "dataGridViewClientes";
-            this.dataGridViewClientes.Size = new System.Drawing.Size(344, 509);
-            this.dataGridViewClientes.TabIndex = 4;
+            this.dataGVClientes.AllowUserToAddRows = false;
+            this.dataGVClientes.AllowUserToDeleteRows = false;
+            this.dataGVClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGVClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nome,
+            this.NIF,
+            this.Contacto});
+            this.dataGVClientes.Location = new System.Drawing.Point(9, 22);
+            this.dataGVClientes.Name = "dataGVClientes";
+            this.dataGVClientes.ReadOnly = true;
+            this.dataGVClientes.Size = new System.Drawing.Size(344, 509);
+            this.dataGVClientes.TabIndex = 4;
+            this.dataGVClientes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGVClientes_MouseClick);
             // 
-            // ColumnNome
+            // Nome
             // 
-            this.ColumnNome.HeaderText = "Nome";
-            this.ColumnNome.Name = "ColumnNome";
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
             // 
-            // ColumnNIF
+            // NIF
             // 
-            this.ColumnNIF.HeaderText = "NIF";
-            this.ColumnNIF.Name = "ColumnNIF";
+            this.NIF.DataPropertyName = "NIF";
+            this.NIF.HeaderText = "NIF";
+            this.NIF.Name = "NIF";
+            this.NIF.ReadOnly = true;
             // 
-            // ColumnContacto
+            // Contacto
             // 
-            this.ColumnContacto.HeaderText = "Contacto";
-            this.ColumnContacto.Name = "ColumnContacto";
+            this.Contacto.DataPropertyName = "Contacto";
+            this.Contacto.HeaderText = "Contacto";
+            this.Contacto.Name = "Contacto";
+            this.Contacto.ReadOnly = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridViewClientes);
+            this.groupBox2.Controls.Add(this.dataGVClientes);
             this.groupBox2.Location = new System.Drawing.Point(3, 92);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(360, 537);
@@ -153,12 +163,12 @@
             // 
             // gbDetalhes
             // 
-            this.gbDetalhes.Controls.Add(this.lbAquisições);
+            this.gbDetalhes.Controls.Add(this.lbVendas);
             this.gbDetalhes.Controls.Add(this.lbArrendamentos);
             this.gbDetalhes.Controls.Add(this.lbCasas);
-            this.gbDetalhes.Controls.Add(this.richTextBox3);
-            this.gbDetalhes.Controls.Add(this.richTextBox2);
-            this.gbDetalhes.Controls.Add(this.richTextBox1);
+            this.gbDetalhes.Controls.Add(this.lbAquisicoesasd);
+            this.gbDetalhes.Controls.Add(this.lbArrendamentosasd);
+            this.gbDetalhes.Controls.Add(this.lbasCasas);
             this.gbDetalhes.Controls.Add(this.btnGuardar);
             this.gbDetalhes.Controls.Add(this.btnNovo);
             this.gbDetalhes.Controls.Add(this.tbContacto);
@@ -176,56 +186,56 @@
             this.gbDetalhes.TabStop = false;
             this.gbDetalhes.Text = "Detalhes";
             // 
-            // lbAquisições
+            // lbVendas
             // 
-            this.lbAquisições.AutoSize = true;
-            this.lbAquisições.Location = new System.Drawing.Point(15, 430);
-            this.lbAquisições.Name = "lbAquisições";
-            this.lbAquisições.Size = new System.Drawing.Size(58, 13);
-            this.lbAquisições.TabIndex = 18;
-            this.lbAquisições.Text = "Aquisições";
+            this.lbVendas.FormattingEnabled = true;
+            this.lbVendas.Location = new System.Drawing.Point(9, 447);
+            this.lbVendas.Name = "lbVendas";
+            this.lbVendas.Size = new System.Drawing.Size(273, 108);
+            this.lbVendas.TabIndex = 21;
             // 
             // lbArrendamentos
             // 
-            this.lbArrendamentos.AutoSize = true;
-            this.lbArrendamentos.Location = new System.Drawing.Point(15, 315);
+            this.lbArrendamentos.FormattingEnabled = true;
+            this.lbArrendamentos.Location = new System.Drawing.Point(6, 330);
             this.lbArrendamentos.Name = "lbArrendamentos";
-            this.lbArrendamentos.Size = new System.Drawing.Size(78, 13);
-            this.lbArrendamentos.TabIndex = 17;
-            this.lbArrendamentos.Text = "Arrendamentos";
+            this.lbArrendamentos.Size = new System.Drawing.Size(276, 95);
+            this.lbArrendamentos.TabIndex = 20;
             // 
             // lbCasas
             // 
-            this.lbCasas.AutoSize = true;
-            this.lbCasas.Location = new System.Drawing.Point(18, 190);
+            this.lbCasas.FormattingEnabled = true;
+            this.lbCasas.Location = new System.Drawing.Point(6, 206);
             this.lbCasas.Name = "lbCasas";
-            this.lbCasas.Size = new System.Drawing.Size(36, 13);
-            this.lbCasas.TabIndex = 16;
-            this.lbCasas.Text = "Casas";
+            this.lbCasas.Size = new System.Drawing.Size(278, 108);
+            this.lbCasas.TabIndex = 19;
             // 
-            // richTextBox3
+            // lbAquisicoesasd
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(18, 331);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(266, 96);
-            this.richTextBox3.TabIndex = 15;
-            this.richTextBox3.Text = "";
+            this.lbAquisicoesasd.AutoSize = true;
+            this.lbAquisicoesasd.Location = new System.Drawing.Point(10, 428);
+            this.lbAquisicoesasd.Name = "lbAquisicoesasd";
+            this.lbAquisicoesasd.Size = new System.Drawing.Size(43, 13);
+            this.lbAquisicoesasd.TabIndex = 18;
+            this.lbAquisicoesasd.Text = "Vendas";
             // 
-            // richTextBox2
+            // lbArrendamentosasd
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(18, 206);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(266, 96);
-            this.richTextBox2.TabIndex = 14;
-            this.richTextBox2.Text = "";
+            this.lbArrendamentosasd.AutoSize = true;
+            this.lbArrendamentosasd.Location = new System.Drawing.Point(6, 317);
+            this.lbArrendamentosasd.Name = "lbArrendamentosasd";
+            this.lbArrendamentosasd.Size = new System.Drawing.Size(78, 13);
+            this.lbArrendamentosasd.TabIndex = 17;
+            this.lbArrendamentosasd.Text = "Arrendamentos";
             // 
-            // richTextBox1
+            // lbasCasas
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(18, 446);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(266, 96);
-            this.richTextBox1.TabIndex = 13;
-            this.richTextBox1.Text = "";
+            this.lbasCasas.AutoSize = true;
+            this.lbasCasas.Location = new System.Drawing.Point(6, 190);
+            this.lbasCasas.Name = "lbasCasas";
+            this.lbasCasas.Size = new System.Drawing.Size(36, 13);
+            this.lbasCasas.TabIndex = 16;
+            this.lbasCasas.Text = "Casas";
             // 
             // btnGuardar
             // 
@@ -324,6 +334,7 @@
             this.btnApagar.TabIndex = 7;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // FormClientes
             // 
@@ -344,7 +355,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormClientes_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVClientes)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.gbDetalhes.ResumeLayout(false);
             this.gbDetalhes.PerformLayout();
@@ -358,11 +369,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cbPesquisaClientes;
         private System.Windows.Forms.Button btFiltrar;
-        private System.Windows.Forms.DataGridView dataGridViewClientes;
+        private System.Windows.Forms.DataGridView dataGVClientes;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNIF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnContacto;
         private System.Windows.Forms.GroupBox gbDetalhes;
         private System.Windows.Forms.Button btnApagar;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
@@ -376,12 +384,15 @@
         private System.Windows.Forms.Label lbContacto;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnNovo;
-        private System.Windows.Forms.Label lbCasas;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label lbAquisições;
-        private System.Windows.Forms.Label lbArrendamentos;
+        private System.Windows.Forms.Label lbasCasas;
+        private System.Windows.Forms.Label lbAquisicoesasd;
+        private System.Windows.Forms.Label lbArrendamentosasd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NIF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contacto;
+        private System.Windows.Forms.ListBox lbVendas;
+        private System.Windows.Forms.ListBox lbArrendamentos;
+        private System.Windows.Forms.ListBox lbCasas;
     }
 }
 

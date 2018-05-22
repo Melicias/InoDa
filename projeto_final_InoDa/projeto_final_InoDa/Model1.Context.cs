@@ -25,11 +25,11 @@ namespace projeto_final_InoDa
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Cliente> ClienteSet { get; set; }
-        public virtual DbSet<Venda> VendaSet { get; set; }
-        public virtual DbSet<Casa> CasaSet { get; set; }
-        public virtual DbSet<Limpeza> LimpezaSet { get; set; }
-        public virtual DbSet<Servico> ServicoSet { get; set; }
-        public virtual DbSet<Arrendamento> ArrendamentoSet { get; set; }
+        public virtual DbSet<Cliente> Clientes { get; set; }
+        public virtual DbSet<Venda> Vendas { get; set; }
+        public virtual DbSet<Casa> Casas { get; set; }
+        public virtual DbSet<Limpeza> Limpezas { get; set; }
+        public virtual DbSet<Servico> Servicos { get; set; }
+        public virtual DbSet<Arrendamento> Arrendamentos { get; set; }
     }
 }

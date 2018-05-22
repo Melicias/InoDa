@@ -24,9 +24,9 @@ namespace projeto_final_InoDa
     
         public int IdCliente { get; set; }
         public string Nome { get; set; }
-        public string NIF { get; set; }
+        public long NIF { get; set; }
         public string Morada { get; set; }
-        public string Contacto { get; set; }
+        public long Contacto { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Arrendamento> Arrendamento { get; set; }

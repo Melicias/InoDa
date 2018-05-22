@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/15/2018 13:08:02
+-- Date Created: 05/21/2018 17:21:50
 -- Generated from EDMX file: C:\Users\melic\Desktop\trabalhos\desenvolvimento de aplicacoes\projeto final\projeto_final_InoDa\projeto_final_InoDa\Model1.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,62 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_ArrendamentoCasaArrendavel]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ArrendamentoSet] DROP CONSTRAINT [FK_ArrendamentoCasaArrendavel];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ArrendamentoCliente]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ArrendamentoSet] DROP CONSTRAINT [FK_ArrendamentoCliente];
+GO
+IF OBJECT_ID(N'[dbo].[FK_VendaCliente]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[VendaSet] DROP CONSTRAINT [FK_VendaCliente];
+GO
+IF OBJECT_ID(N'[dbo].[FK_VendaCasaVendavel]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[VendaSet] DROP CONSTRAINT [FK_VendaCasaVendavel];
+GO
+IF OBJECT_ID(N'[dbo].[FK_LimpezaCasa]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[LimpezaSet] DROP CONSTRAINT [FK_LimpezaCasa];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ServicoLimpeza]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ServicoSet] DROP CONSTRAINT [FK_ServicoLimpeza];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CasaCliente]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[CasaSet] DROP CONSTRAINT [FK_CasaCliente];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CasaArrendavel_inherits_Casa]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[CasaSet_CasaArrendavel] DROP CONSTRAINT [FK_CasaArrendavel_inherits_Casa];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CasaVendavel_inherits_Casa]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[CasaSet_CasaVendavel] DROP CONSTRAINT [FK_CasaVendavel_inherits_Casa];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[ClienteSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ClienteSet];
+GO
+IF OBJECT_ID(N'[dbo].[VendaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[VendaSet];
+GO
+IF OBJECT_ID(N'[dbo].[CasaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CasaSet];
+GO
+IF OBJECT_ID(N'[dbo].[LimpezaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[LimpezaSet];
+GO
+IF OBJECT_ID(N'[dbo].[ServicoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ServicoSet];
+GO
+IF OBJECT_ID(N'[dbo].[ArrendamentoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ArrendamentoSet];
+GO
+IF OBJECT_ID(N'[dbo].[CasaSet_CasaArrendavel]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CasaSet_CasaArrendavel];
+GO
+IF OBJECT_ID(N'[dbo].[CasaSet_CasaVendavel]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CasaSet_CasaVendavel];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -31,18 +82,18 @@ GO
 CREATE TABLE [dbo].[ClienteSet] (
     [IdCliente] int IDENTITY(1,1) NOT NULL,
     [Nome] nvarchar(max)  NOT NULL,
-    [NIF] nvarchar(max)  NOT NULL,
+    [NIF] bigint  NOT NULL,
     [Morada] nvarchar(max)  NOT NULL,
-    [Contacto] nvarchar(max)  NOT NULL
+    [Contacto] bigint  NOT NULL
 );
 GO
 
 -- Creating table 'VendaSet'
 CREATE TABLE [dbo].[VendaSet] (
     [IdVenda] int IDENTITY(1,1) NOT NULL,
-    [DataVenda] nvarchar(max)  NOT NULL,
-    [ValorNegociado] nvarchar(max)  NOT NULL,
-    [ComissaoNegociada] nvarchar(max)  NOT NULL,
+    [DataVenda] datetime  NOT NULL,
+    [ValorNegociado] float  NOT NULL,
+    [ComissaoNegociada] float  NOT NULL,
     [Comprador_IdCliente] int  NOT NULL,
     [CasaVendavel_IdCasa] int  NOT NULL
 );
@@ -53,12 +104,12 @@ CREATE TABLE [dbo].[CasaSet] (
     [IdCasa] int IDENTITY(1,1) NOT NULL,
     [Localidade] nvarchar(max)  NOT NULL,
     [Rua] nvarchar(max)  NOT NULL,
-    [Numero] nvarchar(max)  NOT NULL,
+    [Numero] int  NOT NULL,
     [Andar] nvarchar(max)  NOT NULL,
     [Area] nvarchar(max)  NOT NULL,
-    [NumeroAssoalhada] nvarchar(max)  NOT NULL,
-    [NumeroWC] nvarchar(max)  NOT NULL,
-    [NumeroPisos] nvarchar(max)  NOT NULL,
+    [NumeroAssoalhada] int  NOT NULL,
+    [NumeroWC] int  NOT NULL,
+    [NumeroPisos] int  NOT NULL,
     [Tipo] nvarchar(max)  NOT NULL,
     [Proprietario_IdCliente] int  NOT NULL
 );
@@ -67,7 +118,7 @@ GO
 -- Creating table 'LimpezaSet'
 CREATE TABLE [dbo].[LimpezaSet] (
     [IdLimpeza] int IDENTITY(1,1) NOT NULL,
-    [Data] nvarchar(max)  NOT NULL,
+    [Data] datetime  NOT NULL,
     [Casa_IdCasa] int  NULL
 );
 GO
@@ -76,8 +127,8 @@ GO
 CREATE TABLE [dbo].[ServicoSet] (
     [IdServico] int IDENTITY(1,1) NOT NULL,
     [Descricao] nvarchar(max)  NOT NULL,
-    [Valor] nvarchar(max)  NOT NULL,
-    [Unidades] nvarchar(max)  NOT NULL,
+    [Valor] float  NOT NULL,
+    [Unidades] float  NOT NULL,
     [Limpeza_IdLimpeza] int  NULL
 );
 GO
@@ -85,9 +136,9 @@ GO
 -- Creating table 'ArrendamentoSet'
 CREATE TABLE [dbo].[ArrendamentoSet] (
     [IdArrendamento] int IDENTITY(1,1) NOT NULL,
-    [InicioContrato] nvarchar(max)  NOT NULL,
-    [DuracaoMeses] nvarchar(max)  NOT NULL,
-    [Renovavel] nvarchar(max)  NOT NULL,
+    [InicioContrato] datetime  NOT NULL,
+    [DuracaoMeses] int  NOT NULL,
+    [Renovavel] bit  NOT NULL,
     [CasaArrendavel_IdCasa] int  NULL,
     [Cliente_IdCliente] int  NOT NULL
 );
@@ -95,16 +146,16 @@ GO
 
 -- Creating table 'CasaSet_CasaArrendavel'
 CREATE TABLE [dbo].[CasaSet_CasaArrendavel] (
-    [ValorBaseMes] nvarchar(max)  NOT NULL,
-    [Comissao] nvarchar(max)  NOT NULL,
+    [ValorBaseMes] float  NOT NULL,
+    [Comissao] float  NOT NULL,
     [IdCasa] int  NOT NULL
 );
 GO
 
 -- Creating table 'CasaSet_CasaVendavel'
 CREATE TABLE [dbo].[CasaSet_CasaVendavel] (
-    [ValorBaseVenda] nvarchar(max)  NOT NULL,
-    [ValorComissao] nvarchar(max)  NOT NULL,
+    [ValorBaseVenda] float  NOT NULL,
+    [ValorComissao] float  NOT NULL,
     [IdCasa] int  NOT NULL
 );
 GO

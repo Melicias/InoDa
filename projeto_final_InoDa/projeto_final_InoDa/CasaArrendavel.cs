@@ -20,8 +20,8 @@ namespace projeto_final_InoDa
             this.Arrendamento = new HashSet<Arrendamento>();
         }
     
-        public string ValorBaseMes { get; set; }
-        public string Comissao { get; set; }
+        public double ValorBaseMes { get; set; }
+        public double Comissao { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Arrendamento> Arrendamento { get; set; }

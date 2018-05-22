@@ -15,9 +15,9 @@ namespace projeto_final_InoDa
     public partial class Venda
     {
         public int IdVenda { get; set; }
-        public string DataVenda { get; set; }
-        public string ValorNegociado { get; set; }
-        public string ComissaoNegociada { get; set; }
+        public System.DateTime DataVenda { get; set; }
+        public double ValorNegociado { get; set; }
+        public double ComissaoNegociada { get; set; }
     
         public virtual Cliente Comprador { get; set; }
         public virtual CasaVendavel CasaVendavel { get; set; }

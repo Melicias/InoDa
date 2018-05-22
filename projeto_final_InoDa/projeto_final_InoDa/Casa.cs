@@ -23,12 +23,12 @@ namespace projeto_final_InoDa
         public int IdCasa { get; set; }
         public string Localidade { get; set; }
         public string Rua { get; set; }
-        public string Numero { get; set; }
+        public int Numero { get; set; }
         public string Andar { get; set; }
         public string Area { get; set; }
-        public string NumeroAssoalhada { get; set; }
-        public string NumeroWC { get; set; }
-        public string NumeroPisos { get; set; }
+        public int NumeroAssoalhada { get; set; }
+        public int NumeroWC { get; set; }
+        public int NumeroPisos { get; set; }
         public string Tipo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

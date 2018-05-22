@@ -15,9 +15,9 @@ namespace projeto_final_InoDa
     public partial class Arrendamento
     {
         public int IdArrendamento { get; set; }
-        public string InicioContrato { get; set; }
-        public string DuracaoMeses { get; set; }
-        public string Renovavel { get; set; }
+        public System.DateTime InicioContrato { get; set; }
+        public int DuracaoMeses { get; set; }
+        public bool Renovavel { get; set; }
     
         public virtual CasaArrendavel CasaArrendavel { get; set; }
         public virtual Cliente Cliente { get; set; }

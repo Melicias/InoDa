@@ -8,12 +8,15 @@ namespace projeto_final_InoDa
 {
     public partial class Cliente
     {
-        public Cliente(string nome, string nif, string morada, string contacto)
+        public Cliente(string nome, long nif, string morada, long contacto)
         {
             Nome = nome ?? throw new ArgumentNullException(nameof(nome));
-            NIF = nif ?? throw new ArgumentNullException(nameof(nif));
+            NIF = nif;
             Morada = morada ?? throw new ArgumentNullException(nameof(morada));
-            Contacto = contacto ?? throw new ArgumentNullException(nameof(contacto));
+            Contacto = contacto;
+            this.Casas = new HashSet<Casa>();
+            this.Venda = new HashSet<Venda>();
+            this.Arrendamento = new HashSet<Arrendamento>();
         }
     }
 }

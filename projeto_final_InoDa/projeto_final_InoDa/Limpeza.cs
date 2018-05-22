@@ -21,7 +21,7 @@ namespace projeto_final_InoDa
         }
     
         public int IdLimpeza { get; set; }
-        public string Data { get; set; }
+        public System.DateTime Data { get; set; }
     
         public virtual Casa Casa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

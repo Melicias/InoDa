@@ -26,7 +26,9 @@ namespace projeto_final_InoDa
 
         private void btGerirCasas_Click(object sender, EventArgs e)
         {
-
+            FormCasa formCasa = new FormCasa(this); // Instantiate a FormClientes object.
+            formCasa.Show(); // Show FormClientes
+            this.Hide();// Hides the FormInicial instance.
         }
     }
 }
