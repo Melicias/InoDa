@@ -73,6 +73,24 @@
     <Compile Include="Domain\CasaArrendavel.cs" />
     <Compile Include="Domain\CasaVendavel.cs" />
     <Compile Include="Domain\Cliente.cs" />
+    <Compile Include="Venda de Casa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda de Casa.Designer.cs">
+      <DependentUpon>Venda de Casa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLimpezas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLimpezas.Designer.cs">
+      <DependentUpon>FormLimpezas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormArrendamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormArrendamentos.Designer.cs">
+      <DependentUpon>FormArrendamentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCasa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +141,12 @@
     <Compile Include="Venda.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormLimpezas.resx">
+      <DependentUpon>FormLimpezas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormArrendamentos.resx">
+      <DependentUpon>FormArrendamentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCasa.resx">
       <DependentUpon>FormCasa.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +168,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Venda de Casa.resx">
+      <DependentUpon>Venda de Casa.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
