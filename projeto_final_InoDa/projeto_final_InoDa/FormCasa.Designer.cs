@@ -29,28 +29,40 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGVCasas = new System.Windows.Forms.DataGridView();
+            this.idCasa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Localidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnApagar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbPesquisaCasas = new System.Windows.Forms.ComboBox();
             this.btFiltrar = new System.Windows.Forms.Button();
             this.tbPesquisarCasas = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tbAssoalhadas = new System.Windows.Forms.NumericUpDown();
+            this.tbWc = new System.Windows.Forms.NumericUpDown();
+            this.tbPisos = new System.Windows.Forms.NumericUpDown();
+            this.tbArea = new System.Windows.Forms.NumericUpDown();
+            this.btNova = new System.Windows.Forms.Button();
+            this.btGuardar = new System.Windows.Forms.Button();
+            this.btGerarLimpezas = new System.Windows.Forms.Button();
             this.gbVendavel = new System.Windows.Forms.GroupBox();
+            this.btVerVenda = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox8tbComissaoBase = new System.Windows.Forms.TextBox();
+            this.tbComissaoBase = new System.Windows.Forms.TextBox();
             this.tbValorBaseNegocial = new System.Windows.Forms.TextBox();
             this.gbArrendamento = new System.Windows.Forms.GroupBox();
+            this.btVerCriarArrendamento = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.tbComissao = new System.Windows.Forms.TextBox();
             this.tbValorBase = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.gbVendaArrenda = new System.Windows.Forms.GroupBox();
             this.rbVendavel = new System.Windows.Forms.RadioButton();
             this.rbArrendavel = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
@@ -58,10 +70,6 @@
             this.cbTipo = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbPisos = new System.Windows.Forms.DomainUpDown();
-            this.tbWc = new System.Windows.Forms.DomainUpDown();
-            this.tbAssoalhadas = new System.Windows.Forms.DomainUpDown();
-            this.tbArea = new System.Windows.Forms.DomainUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -76,26 +84,22 @@
             this.tbLocalidade = new System.Windows.Forms.TextBox();
             this.tbId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btVerCriarArrendamento = new System.Windows.Forms.Button();
-            this.btVerVenda = new System.Windows.Forms.Button();
-            this.btGerarLimpezas = new System.Windows.Forms.Button();
-            this.btGuardar = new System.Windows.Forms.Button();
-            this.btNova = new System.Windows.Forms.Button();
-            this.idCasa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Localidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVCasas)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAssoalhadas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbWc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPisos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbArea)).BeginInit();
             this.gbVendavel.SuspendLayout();
             this.gbArrendamento.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.gbVendaArrenda.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dataGVCasas);
             this.groupBox1.Location = new System.Drawing.Point(12, 100);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(364, 550);
@@ -103,17 +107,42 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Casas";
             // 
-            // dataGridView1
+            // dataGVCasas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGVCasas.AllowUserToAddRows = false;
+            this.dataGVCasas.AllowUserToDeleteRows = false;
+            this.dataGVCasas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGVCasas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCasa,
             this.Localidade,
             this.Rua});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(348, 525);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGVCasas.Location = new System.Drawing.Point(6, 19);
+            this.dataGVCasas.Name = "dataGVCasas";
+            this.dataGVCasas.ReadOnly = true;
+            this.dataGVCasas.Size = new System.Drawing.Size(348, 525);
+            this.dataGVCasas.TabIndex = 0;
+            this.dataGVCasas.Click += new System.EventHandler(this.dataGVCasas_Click);
+            // 
+            // idCasa
+            // 
+            this.idCasa.DataPropertyName = "idCasa";
+            this.idCasa.HeaderText = "IdCasa";
+            this.idCasa.Name = "idCasa";
+            this.idCasa.ReadOnly = true;
+            // 
+            // Localidade
+            // 
+            this.Localidade.DataPropertyName = "localidade";
+            this.Localidade.HeaderText = "Localidade";
+            this.Localidade.Name = "Localidade";
+            this.Localidade.ReadOnly = true;
+            // 
+            // Rua
+            // 
+            this.Rua.DataPropertyName = "rua";
+            this.Rua.HeaderText = "Rua";
+            this.Rua.Name = "Rua";
+            this.Rua.ReadOnly = true;
             // 
             // btnApagar
             // 
@@ -123,6 +152,7 @@
             this.btnApagar.TabIndex = 8;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // groupBox2
             // 
@@ -141,9 +171,11 @@
             this.cbPesquisaCasas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPesquisaCasas.FormattingEnabled = true;
             this.cbPesquisaCasas.Items.AddRange(new object[] {
+            "Id",
             "Localidade",
             "Rua",
-            "Nome do proprietario"});
+            "Nome do proprietario",
+            "Tipo"});
             this.cbPesquisaCasas.Location = new System.Drawing.Point(10, 46);
             this.cbPesquisaCasas.Name = "cbPesquisaCasas";
             this.cbPesquisaCasas.Size = new System.Drawing.Size(263, 21);
@@ -168,21 +200,21 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.tbAssoalhadas);
+            this.groupBox3.Controls.Add(this.tbWc);
+            this.groupBox3.Controls.Add(this.tbPisos);
+            this.groupBox3.Controls.Add(this.tbArea);
             this.groupBox3.Controls.Add(this.btNova);
             this.groupBox3.Controls.Add(this.btGuardar);
             this.groupBox3.Controls.Add(this.btGerarLimpezas);
             this.groupBox3.Controls.Add(this.gbVendavel);
             this.groupBox3.Controls.Add(this.gbArrendamento);
-            this.groupBox3.Controls.Add(this.groupBox4);
+            this.groupBox3.Controls.Add(this.gbVendaArrenda);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.cbProprietario);
             this.groupBox3.Controls.Add(this.cbTipo);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.tbPisos);
-            this.groupBox3.Controls.Add(this.tbWc);
-            this.groupBox3.Controls.Add(this.tbAssoalhadas);
-            this.groupBox3.Controls.Add(this.tbArea);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label6);
@@ -204,6 +236,79 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detalhes";
             // 
+            // tbAssoalhadas
+            // 
+            this.tbAssoalhadas.Location = new System.Drawing.Point(77, 185);
+            this.tbAssoalhadas.Name = "tbAssoalhadas";
+            this.tbAssoalhadas.Size = new System.Drawing.Size(120, 20);
+            this.tbAssoalhadas.TabIndex = 40;
+            // 
+            // tbWc
+            // 
+            this.tbWc.Location = new System.Drawing.Point(77, 211);
+            this.tbWc.Name = "tbWc";
+            this.tbWc.Size = new System.Drawing.Size(120, 20);
+            this.tbWc.TabIndex = 39;
+            // 
+            // tbPisos
+            // 
+            this.tbPisos.Location = new System.Drawing.Point(77, 233);
+            this.tbPisos.Name = "tbPisos";
+            this.tbPisos.Size = new System.Drawing.Size(120, 20);
+            this.tbPisos.TabIndex = 38;
+            // 
+            // tbArea
+            // 
+            this.tbArea.Location = new System.Drawing.Point(77, 159);
+            this.tbArea.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.tbArea.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.tbArea.Name = "tbArea";
+            this.tbArea.Size = new System.Drawing.Size(120, 20);
+            this.tbArea.TabIndex = 37;
+            this.tbArea.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // btNova
+            // 
+            this.btNova.Location = new System.Drawing.Point(243, 550);
+            this.btNova.Name = "btNova";
+            this.btNova.Size = new System.Drawing.Size(75, 23);
+            this.btNova.TabIndex = 36;
+            this.btNova.Text = "Nova";
+            this.btNova.UseVisualStyleBackColor = true;
+            this.btNova.Click += new System.EventHandler(this.btNova_Click);
+            // 
+            // btGuardar
+            // 
+            this.btGuardar.Location = new System.Drawing.Point(10, 550);
+            this.btGuardar.Name = "btGuardar";
+            this.btGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btGuardar.TabIndex = 35;
+            this.btGuardar.Text = "Guardar";
+            this.btGuardar.UseVisualStyleBackColor = true;
+            this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
+            // 
+            // btGerarLimpezas
+            // 
+            this.btGerarLimpezas.Enabled = false;
+            this.btGerarLimpezas.Location = new System.Drawing.Point(11, 516);
+            this.btGerarLimpezas.Name = "btGerarLimpezas";
+            this.btGerarLimpezas.Size = new System.Drawing.Size(298, 21);
+            this.btGerarLimpezas.TabIndex = 34;
+            this.btGerarLimpezas.Text = "Gerir Limpezas";
+            this.btGerarLimpezas.UseVisualStyleBackColor = true;
+            // 
             // gbVendavel
             // 
             this.gbVendavel.Controls.Add(this.btVerVenda);
@@ -211,7 +316,7 @@
             this.gbVendavel.Controls.Add(this.label19);
             this.gbVendavel.Controls.Add(this.label17);
             this.gbVendavel.Controls.Add(this.label16);
-            this.gbVendavel.Controls.Add(this.textBox8tbComissaoBase);
+            this.gbVendavel.Controls.Add(this.tbComissaoBase);
             this.gbVendavel.Controls.Add(this.tbValorBaseNegocial);
             this.gbVendavel.Enabled = false;
             this.gbVendavel.Location = new System.Drawing.Point(170, 372);
@@ -220,6 +325,15 @@
             this.gbVendavel.TabIndex = 33;
             this.gbVendavel.TabStop = false;
             this.gbVendavel.Text = "Dados de venda";
+            // 
+            // btVerVenda
+            // 
+            this.btVerVenda.Location = new System.Drawing.Point(36, 106);
+            this.btVerVenda.Name = "btVerVenda";
+            this.btVerVenda.Size = new System.Drawing.Size(75, 23);
+            this.btVerVenda.TabIndex = 8;
+            this.btVerVenda.Text = "Ver";
+            this.btVerVenda.UseVisualStyleBackColor = true;
             // 
             // label18
             // 
@@ -257,12 +371,12 @@
             this.label16.TabIndex = 2;
             this.label16.Text = "Valor base negocial:";
             // 
-            // textBox8tbComissaoBase
+            // tbComissaoBase
             // 
-            this.textBox8tbComissaoBase.Location = new System.Drawing.Point(17, 80);
-            this.textBox8tbComissaoBase.Name = "textBox8tbComissaoBase";
-            this.textBox8tbComissaoBase.Size = new System.Drawing.Size(100, 20);
-            this.textBox8tbComissaoBase.TabIndex = 1;
+            this.tbComissaoBase.Location = new System.Drawing.Point(17, 80);
+            this.tbComissaoBase.Name = "tbComissaoBase";
+            this.tbComissaoBase.Size = new System.Drawing.Size(100, 20);
+            this.tbComissaoBase.TabIndex = 1;
             // 
             // tbValorBaseNegocial
             // 
@@ -287,6 +401,15 @@
             this.gbArrendamento.TabIndex = 32;
             this.gbArrendamento.TabStop = false;
             this.gbArrendamento.Text = "Dados de arrendamento";
+            // 
+            // btVerCriarArrendamento
+            // 
+            this.btVerCriarArrendamento.Location = new System.Drawing.Point(28, 106);
+            this.btVerCriarArrendamento.Name = "btVerCriarArrendamento";
+            this.btVerCriarArrendamento.Size = new System.Drawing.Size(75, 23);
+            this.btVerCriarArrendamento.TabIndex = 6;
+            this.btVerCriarArrendamento.Text = "Ver/Criar";
+            this.btVerCriarArrendamento.UseVisualStyleBackColor = true;
             // 
             // label15
             // 
@@ -338,15 +461,15 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Valor base (mês)";
             // 
-            // groupBox4
+            // gbVendaArrenda
             // 
-            this.groupBox4.Controls.Add(this.rbVendavel);
-            this.groupBox4.Controls.Add(this.rbArrendavel);
-            this.groupBox4.Location = new System.Drawing.Point(77, 313);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(169, 44);
-            this.groupBox4.TabIndex = 31;
-            this.groupBox4.TabStop = false;
+            this.gbVendaArrenda.Controls.Add(this.rbVendavel);
+            this.gbVendaArrenda.Controls.Add(this.rbArrendavel);
+            this.gbVendaArrenda.Location = new System.Drawing.Point(77, 313);
+            this.gbVendaArrenda.Name = "gbVendaArrenda";
+            this.gbVendaArrenda.Size = new System.Drawing.Size(169, 44);
+            this.gbVendaArrenda.TabIndex = 31;
+            this.gbVendaArrenda.TabStop = false;
             // 
             // rbVendavel
             // 
@@ -383,6 +506,7 @@
             // 
             // cbProprietario
             // 
+            this.cbProprietario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProprietario.FormattingEnabled = true;
             this.cbProprietario.Location = new System.Drawing.Point(77, 286);
             this.cbProprietario.Name = "cbProprietario";
@@ -391,7 +515,16 @@
             // 
             // cbTipo
             // 
+            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.Items.AddRange(new object[] {
+            "Moradia",
+            "Moradia com jardim",
+            "Moradia com piscina",
+            "Moradia com piscina e jardim",
+            "Apartamento",
+            "Apartamento com piscina",
+            "Apartamento com piscina e jardim"});
             this.cbTipo.Location = new System.Drawing.Point(77, 259);
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(241, 21);
@@ -414,38 +547,6 @@
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 22;
             this.label2.Text = "WC\'s:";
-            // 
-            // tbPisos
-            // 
-            this.tbPisos.Location = new System.Drawing.Point(77, 233);
-            this.tbPisos.Name = "tbPisos";
-            this.tbPisos.Size = new System.Drawing.Size(120, 20);
-            this.tbPisos.TabIndex = 21;
-            this.tbPisos.Text = "domainUpDown4";
-            // 
-            // tbWc
-            // 
-            this.tbWc.Location = new System.Drawing.Point(77, 207);
-            this.tbWc.Name = "tbWc";
-            this.tbWc.Size = new System.Drawing.Size(120, 20);
-            this.tbWc.TabIndex = 20;
-            this.tbWc.Text = "domainUpDown3";
-            // 
-            // tbAssoalhadas
-            // 
-            this.tbAssoalhadas.Location = new System.Drawing.Point(77, 181);
-            this.tbAssoalhadas.Name = "tbAssoalhadas";
-            this.tbAssoalhadas.Size = new System.Drawing.Size(120, 20);
-            this.tbAssoalhadas.TabIndex = 19;
-            this.tbAssoalhadas.Text = "domainUpDown2";
-            // 
-            // tbArea
-            // 
-            this.tbArea.Location = new System.Drawing.Point(77, 155);
-            this.tbArea.Name = "tbArea";
-            this.tbArea.Size = new System.Drawing.Size(120, 20);
-            this.tbArea.TabIndex = 18;
-            this.tbArea.Text = "domainUpDown1";
             // 
             // label8
             // 
@@ -564,70 +665,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID:";
             // 
-            // btVerCriarArrendamento
-            // 
-            this.btVerCriarArrendamento.Location = new System.Drawing.Point(28, 106);
-            this.btVerCriarArrendamento.Name = "btVerCriarArrendamento";
-            this.btVerCriarArrendamento.Size = new System.Drawing.Size(75, 23);
-            this.btVerCriarArrendamento.TabIndex = 6;
-            this.btVerCriarArrendamento.Text = "Ver/Criar";
-            this.btVerCriarArrendamento.UseVisualStyleBackColor = true;
-            // 
-            // btVerVenda
-            // 
-            this.btVerVenda.Location = new System.Drawing.Point(36, 106);
-            this.btVerVenda.Name = "btVerVenda";
-            this.btVerVenda.Size = new System.Drawing.Size(75, 23);
-            this.btVerVenda.TabIndex = 8;
-            this.btVerVenda.Text = "Ver";
-            this.btVerVenda.UseVisualStyleBackColor = true;
-            // 
-            // btGerarLimpezas
-            // 
-            this.btGerarLimpezas.Location = new System.Drawing.Point(11, 516);
-            this.btGerarLimpezas.Name = "btGerarLimpezas";
-            this.btGerarLimpezas.Size = new System.Drawing.Size(298, 21);
-            this.btGerarLimpezas.TabIndex = 34;
-            this.btGerarLimpezas.Text = "Gerir Limpezas";
-            this.btGerarLimpezas.UseVisualStyleBackColor = true;
-            // 
-            // btGuardar
-            // 
-            this.btGuardar.Location = new System.Drawing.Point(10, 550);
-            this.btGuardar.Name = "btGuardar";
-            this.btGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btGuardar.TabIndex = 35;
-            this.btGuardar.Text = "Guardar";
-            this.btGuardar.UseVisualStyleBackColor = true;
-            // 
-            // btNova
-            // 
-            this.btNova.Location = new System.Drawing.Point(243, 550);
-            this.btNova.Name = "btNova";
-            this.btNova.Size = new System.Drawing.Size(75, 23);
-            this.btNova.TabIndex = 36;
-            this.btNova.Text = "Nova";
-            this.btNova.UseVisualStyleBackColor = true;
-            this.btNova.Click += new System.EventHandler(this.btNova_Click);
-            // 
-            // idCasa
-            // 
-            this.idCasa.DataPropertyName = "idCasa";
-            this.idCasa.HeaderText = "IdCasa";
-            this.idCasa.Name = "idCasa";
-            // 
-            // Localidade
-            // 
-            this.Localidade.DataPropertyName = "localidade";
-            this.Localidade.HeaderText = "Localidade";
-            this.Localidade.Name = "Localidade";
-            // 
-            // Rua
-            // 
-            this.Rua.DataPropertyName = "rua";
-            this.Rua.HeaderText = "Rua";
-            this.Rua.Name = "Rua";
-            // 
             // FormCasa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -645,17 +682,21 @@
             this.Text = "FormCasa";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCasa_FormClosing);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVCasas)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAssoalhadas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbWc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPisos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbArea)).EndInit();
             this.gbVendavel.ResumeLayout(false);
             this.gbVendavel.PerformLayout();
             this.gbArrendamento.ResumeLayout(false);
             this.gbArrendamento.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.gbVendaArrenda.ResumeLayout(false);
+            this.gbVendaArrenda.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -663,7 +704,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGVCasas;
         private System.Windows.Forms.Button btnApagar;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cbPesquisaCasas;
@@ -671,7 +712,6 @@
         private System.Windows.Forms.TextBox tbPesquisarCasas;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DomainUpDown tbArea;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
@@ -681,7 +721,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lb2;
         private System.Windows.Forms.TextBox tbAndar;
-        private System.Windows.Forms.TextBox tbNumero;
         private System.Windows.Forms.TextBox tbRua;
         private System.Windows.Forms.TextBox tbLocalidade;
         private System.Windows.Forms.TextBox tbId;
@@ -689,7 +728,7 @@
         private System.Windows.Forms.GroupBox gbArrendamento;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox gbVendaArrenda;
         private System.Windows.Forms.RadioButton rbVendavel;
         private System.Windows.Forms.RadioButton rbArrendavel;
         private System.Windows.Forms.Label label11;
@@ -697,14 +736,11 @@
         private System.Windows.Forms.ComboBox cbTipo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DomainUpDown tbPisos;
-        private System.Windows.Forms.DomainUpDown tbWc;
-        private System.Windows.Forms.DomainUpDown tbAssoalhadas;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox8tbComissaoBase;
+        private System.Windows.Forms.TextBox tbComissaoBase;
         private System.Windows.Forms.TextBox tbValorBaseNegocial;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
@@ -718,5 +754,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idCasa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Localidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rua;
+        private System.Windows.Forms.NumericUpDown tbAssoalhadas;
+        private System.Windows.Forms.NumericUpDown tbWc;
+        private System.Windows.Forms.NumericUpDown tbPisos;
+        private System.Windows.Forms.NumericUpDown tbArea;
+        private System.Windows.Forms.TextBox tbNumero;
     }
 }

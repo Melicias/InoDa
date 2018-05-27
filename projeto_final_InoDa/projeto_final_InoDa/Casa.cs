@@ -23,7 +23,7 @@ namespace projeto_final_InoDa
         public int IdCasa { get; set; }
         public string Localidade { get; set; }
         public string Rua { get; set; }
-        public int Numero { get; set; }
+        public string Numero { get; set; }
         public string Andar { get; set; }
         public string Area { get; set; }
         public int NumeroAssoalhada { get; set; }

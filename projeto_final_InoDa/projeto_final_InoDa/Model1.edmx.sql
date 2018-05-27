@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/21/2018 17:21:50
+-- Date Created: 05/22/2018 20:16:20
 -- Generated from EDMX file: C:\Users\melic\Desktop\trabalhos\desenvolvimento de aplicacoes\projeto final\projeto_final_InoDa\projeto_final_InoDa\Model1.edmx
 -- --------------------------------------------------
 
@@ -104,7 +104,7 @@ CREATE TABLE [dbo].[CasaSet] (
     [IdCasa] int IDENTITY(1,1) NOT NULL,
     [Localidade] nvarchar(max)  NOT NULL,
     [Rua] nvarchar(max)  NOT NULL,
-    [Numero] int  NOT NULL,
+    [Numero] nvarchar(max)  NOT NULL,
     [Andar] nvarchar(max)  NOT NULL,
     [Area] nvarchar(max)  NOT NULL,
     [NumeroAssoalhada] int  NOT NULL,

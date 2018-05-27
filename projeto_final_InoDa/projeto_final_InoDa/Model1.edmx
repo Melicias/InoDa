@@ -79,7 +79,7 @@
     <Property Name="IdCasa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Localidade" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Rua" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Numero" Type="int" Nullable="false" />
+    <Property Name="Numero" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Andar" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Area" Type="nvarchar(max)" Nullable="false" />
     <Property Name="NumeroAssoalhada" Type="int" Nullable="false" />
@@ -332,7 +332,7 @@
           <Property Name="IdCasa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Localidade" Type="String" Nullable="false" />
           <Property Name="Rua" Type="String" Nullable="false" />
-          <Property Name="Numero" Type="Int32" Nullable="false" />
+          <Property Name="Numero" Type="String" Nullable="false" />
           <Property Name="Andar" Type="String" Nullable="false" />
           <Property Name="Area" Type="String" Nullable="false" />
           <Property Name="NumeroAssoalhada" Type="Int32" Nullable="false" />

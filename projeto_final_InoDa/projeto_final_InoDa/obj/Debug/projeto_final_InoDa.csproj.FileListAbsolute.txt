@@ -15,3 +15,4 @@ C:\Users\melic\Desktop\trabalhos\desenvolvimento de aplicacoes\projeto final\pro
 C:\Users\melic\Desktop\trabalhos\desenvolvimento de aplicacoes\projeto final\projeto_final_InoDa\projeto_final_InoDa\bin\Debug\EntityFramework.xml
 C:\Users\melic\Desktop\trabalhos\desenvolvimento de aplicacoes\projeto final\projeto_final_InoDa\projeto_final_InoDa\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\melic\Desktop\trabalhos\desenvolvimento de aplicacoes\projeto final\projeto_final_InoDa\projeto_final_InoDa\obj\Debug\projeto_final_InoDa.csproj.CopyComplete
+C:\Users\melic\Desktop\trabalhos\desenvolvimento de aplicacoes\projeto final\projeto_final_InoDa\projeto_final_InoDa\obj\Debug\projeto_final_InoDa.FormDetalhesCasa.resources

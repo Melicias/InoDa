@@ -8,7 +8,7 @@ namespace projeto_final_InoDa
 {
     public partial class Casa
     {
-        public Casa(string localidade, string rua, int numero, string andar, string area, int numeroAssoalhada, int numeroWC, int numeroPisos, string tipo, Cliente proprietario)
+        public Casa(string localidade, string rua, string numero, string andar, string area, int numeroAssoalhada, int numeroWC, int numeroPisos, string tipo, Cliente proprietario)
         {
             Localidade = localidade ?? throw new ArgumentNullException(nameof(localidade));
             Rua = rua ?? throw new ArgumentNullException(nameof(rua));
@@ -20,11 +20,13 @@ namespace projeto_final_InoDa
             NumeroPisos = numeroPisos;
             Tipo = tipo ?? throw new ArgumentNullException(nameof(tipo));
             Proprietario = proprietario ?? throw new ArgumentNullException(nameof(proprietario));
+
+            this.Limpeza = new HashSet<Limpeza>();
         }
 
         public override string ToString()
         {
-            return Localidade + ", Nr." + Numero + ", andar";
+            return Localidade + ", Nr." + Numero + "";
         }
     }
 }

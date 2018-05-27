@@ -236,5 +236,27 @@ namespace projeto_final_InoDa
                 dataGVClientes.DataSource = mc.Clientes.ToList();
             }
         }
+
+        private void lbCasas_DoubleClick(object sender, EventArgs e)
+        {
+            if(this.lbCasas.SelectedIndex != -1)
+            {
+                Object obj = this.lbCasas.SelectedItem;
+
+                Type tipo = obj.GetType();
+                if (tipo.BaseType.Equals(typeof(CasaVendavel)))
+                {
+                    FormDetalhesCasa form = new FormDetalhesCasa((CasaVendavel)obj,this);
+                    form.Show(); // Show FormClientes
+                    this.Hide();
+                }
+                else
+                {
+                    FormDetalhesCasa form = new FormDetalhesCasa((CasaArrendavel)obj, this);
+                    form.Show(); // Show FormClientes
+                    this.Hide();
+                }
+            }
+        }
     }
 }

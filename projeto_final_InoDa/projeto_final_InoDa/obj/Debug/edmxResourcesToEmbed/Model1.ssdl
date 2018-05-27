@@ -74,7 +74,7 @@
     <Property Name="IdCasa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Localidade" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Rua" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Numero" Type="int" Nullable="false" />
+    <Property Name="Numero" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Andar" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Area" Type="nvarchar(max)" Nullable="false" />
     <Property Name="NumeroAssoalhada" Type="int" Nullable="false" />

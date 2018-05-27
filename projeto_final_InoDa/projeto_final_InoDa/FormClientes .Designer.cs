@@ -209,6 +209,7 @@
             this.lbCasas.Name = "lbCasas";
             this.lbCasas.Size = new System.Drawing.Size(278, 108);
             this.lbCasas.TabIndex = 19;
+            this.lbCasas.DoubleClick += new System.EventHandler(this.lbCasas_DoubleClick);
             // 
             // lbAquisicoesasd
             // 

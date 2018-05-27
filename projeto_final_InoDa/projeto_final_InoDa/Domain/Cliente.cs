@@ -18,5 +18,10 @@ namespace projeto_final_InoDa
             this.Venda = new HashSet<Venda>();
             this.Arrendamento = new HashSet<Arrendamento>();
         }
+
+        public override string ToString()
+        {
+            return Nome + " (" + NIF + ")";
+        }
     }
 }
